@@ -67,8 +67,13 @@ export default class Filter extends Component {
       <div className='filter-right'>
         <span className='label-filter'>Sort by:</span>
         {this.props.sorts.map(this.renderSortButton, this)}
-        <form onSubmit={this.searchSubmit.bind(this)}>
-          <input type='text' placeholder='Search' value={this.state.search} onChange={this.searchChange.bind(this)} />
+        <form onSubmit={this.searchSubmit.bind(this)} className='filter-search'>
+          <span className='filter-search__input'>
+            <input type='text' placeholder='Search' value={this.state.search} onChange={this.searchChange.bind(this)} />
+          </span>
+          <span className='filter-search__icon'>
+            <i className='fa fa-search'></i>
+          </span>
         </form>
       </div>
     );
